@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px;
+}
+
+.header img {
+    height: 60px;
+}
+
+.header a {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: green;
+    font-size: 26px;
+    transition: 0.5s;
+}
+
+.caixa-mae {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px; /* Adiciona espaçamento horizontal para dispositivos móveis */
+}
+
+.caixa-principal {
+    text-align: center;
+}
+
+.logo-principal {
+    height: 350px;
+    margin-bottom: 20px;
+}
+
+.botão-entre-em-contato {
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+p {
+    color: rgb(233, 237, 245);
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.caixa-vdeo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.link-zap img {
+    height: 150px;
+    position: fixed;
+    right: 100px;
+    bottom: 20px;
+}
+
+.formulario-fale-conosco {
+    background-color: white;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30%;
+    left: -300px; /* Inicia fora da tela */
+    transition: left 1s ease-in-out;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    outline-color: rgb(40, 253, 40);
+}
+
+textarea {
+    height: 100px;
+    width: 100%;
+}
+
+.botão-pedir-orçamento {
+    color: white;
+    background-color: green;
+    border-radius: 3px;
+    border: none;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.mascara-fundo {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 12, 16, 0.7);
+    transition: visibility 0.5s;
+}
+
+@media (max-width: 1117px) {
+    .logo-principal {
+        height: 280px;
+    }
+
+    .header img {
+        display: none;
+    }
+
+    .caixa-mae {
+        padding: 0 20px; /* Ajusta o padding para dispositivos móveis */
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .caixa-principal {
+        width: 100%;
+    }
+
+    .botão-entre-em-contato {
+        margin-top: 20px;
+        width: 80%; /* Ajusta a largura do botão para dispositivos móveis */
+        max-width: 300px; /* Define uma largura máxima para o botão */
+    }
+
+    p {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-principal {
+        height: 200px;
+    }
+
+    .link-zap img {
+        height: 100px;
+    }
+}
+
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.service-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Aumenta o espaçamento entre os itens */
+    padding: 20px;
+    max-width: 120%; /* Aumenta a largura máxima do menu */
+    margin: auto;
+}
+
+.service-item {
+    position: relative;
+    width: 250px; /* Aumenta a largura dos itens */
+    text-align: center;
+    cursor: pointer;
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover img {
+    transform: scale(1.05);
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.service-item:hover .service-overlay {
+    opacity: 1;
+}
+
+.service-overlay img {
+    width: 150px; /* Aumenta o tamanho das miniaturas */
+    height: 130px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.service-overlay img:hover {
+    transform: scale(1.2);
+}
+
+.service-item span {
+    display: block;
+    margin-top: 10px;
+    font-size: 35px; /* Aumenta o tamanho da fonte */
+    color: #040000;
+    font-weight: bold;
+
+
+
+}
+
+.logo-nossos-serviços{
+    display: flex;
+    
+    height: 100px;
+    width: 100px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .service-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-item {
+        width: 80%;
+    }
+
+
+}
